@@ -33,7 +33,6 @@ public class RequireServiceImpl implements RequireService
         }
         log.error("创建失败");
         return Result.error("创建失败");
-        
     }
     
     @Override
@@ -67,9 +66,8 @@ public class RequireServiceImpl implements RequireService
             }
             
             return Result.success(requirement);
-        
-    
     }
+    
     @Override
     public Result completeRequirement(int id, int completerId)
     {
