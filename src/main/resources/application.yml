@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: c2c
+  datasource: #!!!!!!!!!!!!!!!!!!!11
+    url: jdbc:mysql://localhost:3306/client_to_client
+    username: root
+    password: 312413zsjnmdr
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:         #千万记得冒号后面要有空格
+    map-underscore-to-camel-case: true   #开启下划线命名转换为驼峰命名
+    map-camel-to-underscore-case: true
