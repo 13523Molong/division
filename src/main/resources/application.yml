@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-talis
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password:
+
+  mybatis:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      map-underscore-to-camel-case: true
