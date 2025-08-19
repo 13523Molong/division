@@ -25,11 +25,11 @@
 		</dependency>
 
 		<!-- MyBatis-Plus 依赖（后续任务用，提前引入） -->
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>3.5.5</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.baomidou</groupId>-->
+<!--			<artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--			<version>3.5.5</version>-->
+<!--		</dependency>-->
 
 		<!-- Lombok（简化实体类代码） -->
 		<dependency>
@@ -44,6 +44,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
