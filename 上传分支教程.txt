@@ -1,0 +1,15 @@
+首先在自己的项目工程文件根目录里面打开shell
+
+然后输入    git init
+
+创建好仓库后 给本地加入我的github仓库url 
+
+git remote add   你自己起一个好记的名字   https://github.com/13523Molong/division.git
+
+git branch -M 你自己的名字  （莫宇龙）
+
+git add .     
+  
+git commit -m " 本次分支的说明信息 "
+
+git push   你刚才起的名字  你自己的分支名字（莫宇龙）
