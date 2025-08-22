@@ -32,6 +32,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public Result login(User user) {
-        return null;
+        //1. 检查用户名是否存在
+        QueryWrapper<User> queryWrapper=new QueryWrapper();
+        queryWrapper.eq("username",user.getUsername());
+        User dbUser= baseMapper.selectOne(queryWrapper);
+        if(dbUser==null){
+            return Result.fail("用户不存在");
+        }
+        //2. 检查密码是否一致
+        if(!dbUser.getPassword().equals(user.getPassword())){
+            return Result.fail("密码错误");
+        }
+        //3. 返回成功结果
+        return Result.success("登录成功",dbUser);
+
+
+
+
+
     }
 }
