@@ -16,19 +16,27 @@ public class Requirement {
     private Integer id;//主键ID
 
     @NotEmpty//为默认分组       (groups={update.class，add.class})
-    private String requirementName;//名称
+    private String title;//名称
 
     @NotEmpty
     private String content;//需求内容
 
-    @NotEmpty
-    @State//使用自定义注解,state只能是 已发布 进行中 已完成
+    //@NotEmpty
+    //@State//使用自定义注解,state只能是 已发布 进行中 已完成
     private String state;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
+    //各个阶段，默认是草稿
+    private RequirementStatus status = RequirementStatus.DRAFT;
+   // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @NotNull
     private Integer createUser;//创建人ID
 
+    private Integer acceptUser;//接受人ID
     @JsonFormat(pattern="yyyy MM dd HH:mm:ss")  //注意，MM和HH要大写！！！！！！
     private LocalDateTime createTime;//创建时间
+
+    @JsonFormat(pattern="yyyy MM dd HH:mm:ss")
+    private LocalDateTime updateTime;//更新时间
 
 }

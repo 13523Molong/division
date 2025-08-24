@@ -23,7 +23,7 @@ public class UserController {
         User user = userService.findByUserName(username);
         if(user==null){
             userService.register(username,password);
-            return response.success();
+            return response.success("注册成功");
         }
         else{
             return response.error("用户名已被占用");

@@ -33,8 +33,10 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>3.0.5</version>
+			<version>3.0.3</version>
 		</dependency>
+
+
 
 		<!--Spring MVC：支持 @RestController、@RequestMapping 等注解。
 			内嵌 Tomcat：默认的 Web 服务器。
@@ -56,6 +58,13 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
+		</dependency>
+
+		<!--		pagehelper坐标-->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.4.7</version>
 		</dependency>
 
 		<dependency>

@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 
 
 @Documented//元注解
-@Target({ElementType.FIELD})//元注解，指定用在哪些场景上，这里指定用在属性上（即成员变量）
+@Target({ElementType.PARAMETER, ElementType.FIELD})//元注解，指定用在哪些场景上，这里指定用在属性上（即成员变量）和参数上
 @Retention(RetentionPolicy.RUNTIME)//元注解，运行时生效
 @Constraint(validatedBy = {StateValidation.class})//里面指定一个类，来表明是哪个类提供校验规则
 
