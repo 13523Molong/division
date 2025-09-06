@@ -1,9 +1,18 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* 每行两列 */
+  /* 每行两列 - 确保骨架屏与真实卡片布局一致 */
   gap: 16px;
   width: 100%;
   padding: 0 2px;
   box-sizing: border-box;
+
+  /* 确保两列布局的强制设置 */
+  &>* {
+    min-width: 0;
+    /* 防止内容溢出 */
+  }
+
+  /* 调试样式 - 可以临时启用查看布局 */
+  /* border: 1px solid red; */
 }

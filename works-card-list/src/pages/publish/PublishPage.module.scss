@@ -1,10 +1,53 @@
-.container {
-    max-width: 500px;
-    margin: 50px auto;
+// 页面背景容器
+.pageBackground {
+    min-height: 100vh;
+    background-image: url('../../../public/images/发布页背景图4.png'); // 使用项目中的图片
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+
+    // 背景模糊遮罩
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white(255, 255, 255, 0.4); // 半透明黑色遮罩
+        backdrop-filter: blur(10px); // 背景模糊效果
+        -webkit-backdrop-filter: blur(10px); // Safari兼容
+    }
+}
+
+.container {
+    max-width: 550px;
+    width: 80%;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12); // 半透明白色背景
+    backdrop-filter: blur(25px); // 表单背景模糊
+    -webkit-backdrop-filter: blur(25px); // Safari兼容
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+
+    // 表单标题样式
+    h2 {
+        color: #3f3a3a;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
 }
 
 .form {
@@ -12,45 +55,154 @@
     flex-direction: column;
 
     .field {
-        margin-bottom: 15px;
+        margin-bottom: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; // 字段内容居中
+        width: 100%;
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center; // 标签文字居中
+            font-weight: 600;
+            color: #363434;
+            font-size: 15px;
+            letter-spacing: 0.5px;
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 2px solid rgba(42, 41, 41, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #454343;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.5);
+                font-weight: 400;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: rgba(23, 22, 22, 0.6);
+                background: rgba(255, 255, 255, 0.12);
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+                transform: translateY(-1px);
+            }
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.4);
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+            line-height: 1.5;
         }
 
         span {
-            color: red;
-            font-size: 12px;
+            color: #ff6b6b;
+            font-size: 13px;
+            margin-top: 6px;
+            display: block;
+            font-weight: 500;
         }
     }
 
     button {
-        padding: 10px 15px;
+        width: 80%; // 按钮也居中显示
+        margin: 0 auto; // 强制水平居中
+        display: block; // 块级显示
+        padding: 16px 24px;
         border: none;
-        border-radius: 4px;
-        background-color: #1890ff;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        font-weight: bold;
+        font-weight: 600;
+        font-size: 17px;
         cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        letter-spacing: 0.5px;
+        margin-top: 10px;
 
         &:hover {
-            background-color: #40a9ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            color: rgba(255, 255, 255, 0.6);
         }
     }
 }
 
+.groupTitle {
+    margin: 20px 0 15px 0;
+    font-size: 18px;
+    color: #6a6666;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.inlineFields {
+    display: flex;
+    gap: 45px;
+
+    .field {
+        flex: 1;
+        min-width: 0; // 防止flex项目溢出
+    }
+}
+
 .success {
-    margin-top: 15px;
-    color: green;
-    font-weight: bold;
+    margin-top: 25px;
+    color: #4ade80;
+    font-weight: 600;
+    text-align: center;
+    padding: 18px;
+    background: rgba(74, 222, 128, 0.12);
+    border: 2px solid rgba(74, 222, 128, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.15);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.error {
+    margin-top: 25px;
+    color: #ff6b6b;
+    font-weight: 600;
+    text-align: center;
+    padding: 18px;
+    background: rgba(255, 107, 107, 0.12);
+    border: 2px solid rgba(255, 107, 107, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.15);
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }

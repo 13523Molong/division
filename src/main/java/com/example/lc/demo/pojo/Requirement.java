@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -20,4 +22,12 @@ public class Requirement
     private String status="PUBLISHED";
     private String phase="PHASE_1";
     private Integer acceptorId;
+    
+    // 新增字段
+    private BigDecimal budget;
+    private LocalDate dueDate;
+    private BigDecimal budgetMin;
+    private BigDecimal budgetMax;
+    private LocalDate dateStart;
+    private LocalDate dateEnd;
 }

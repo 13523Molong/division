@@ -1,0 +1,21 @@
+.locationBar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 6px;
+    color: #333;
+    font-size: 16px;
+}
+
+.locationBar i {
+    margin: 0 8px;
+}
+
+.locationText {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

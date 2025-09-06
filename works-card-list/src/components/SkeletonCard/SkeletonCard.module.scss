@@ -1,0 +1,127 @@
+// 骨架屏卡片 - 与真实卡片完全一致的样式
+.skeletonCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// 图片容器 - 与真实卡片完全一致
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imageSkeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f5f5f5 25%, #e8e8e8 50%, #f5f5f5 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 0; // 与图片保持一致
+}
+
+// 内容区域 - 与真实卡片完全一致
+.content {
+  padding: 16px;
+}
+
+// 标题骨架 - 模拟真实标题的2行显示
+.titleSkeleton {
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
+  margin: 0 0 8px 0;
+  width: 85%; // 模拟标题长度变化
+}
+
+// 描述骨架 - 模拟真实描述的2行显示
+.descriptionSkeleton {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
+  margin: 0 0 12px 0;
+  width: 100%;
+
+  // 第二行描述
+  &::after {
+    content: '';
+    display: block;
+    height: 16px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 70%; // 第二行稍短
+  }
+}
+
+// 元信息区域 - 与真实卡片完全一致
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+// 预算骨架 - 模拟真实预算样式
+.budgetSkeleton {
+  height: 14px;
+  background: linear-gradient(90deg, #e6f7ff 25%, #bae7ff 50%, #e6f7ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
+  width: 60px; // 模拟预算长度
+}
+
+// 日期骨架 - 模拟真实日期样式
+.dateSkeleton {
+  height: 14px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
+  width: 50px; // 模拟日期长度
+}
+
+// 优化的闪烁动画 - 更自然的视觉效果
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// 为骨架屏添加微妙的呼吸效果
+.skeletonCard {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}

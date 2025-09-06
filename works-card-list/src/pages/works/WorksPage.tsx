@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import CardList from "../../components/CardList/CardList";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import TopNav from "../../components/TopNav/TopNav";
+import LocationBar from "../../components/LocationBar/LocationBar";
 import styles from "./WorksPage.module.scss";
-import { Link } from "react-router-dom"; 
-import worksData from "../../data/worksData";
-import { WorkItem } from "../../types"; 
 
 const WorksPage: React.FC = () => {
-  const [works] = useState<WorkItem[]>(worksData);
+  const [search, setSearch] = useState("");
+  const [activeTab, setActiveTab] = useState("recommend");
 
   return (
     <div className={styles.container}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h2>作品列表</h2>
-        <Link to="/publish">发布需求</Link>
+      <div className={styles.headerRow}>
+        <div className={styles.leftHeader}><LocationBar /></div>
+        <div className={styles.rightHeader}><i className="fa-regular fa-bell"></i></div>
       </div>
-      <CardList items={works} />
+      <SearchBar value={search} onChange={setSearch} />
+      <TopNav active={activeTab} onChange={setActiveTab} />
+      <CardList />
     </div>
   );
 };

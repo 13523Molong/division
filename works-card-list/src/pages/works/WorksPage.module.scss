@@ -8,3 +8,26 @@
     margin-bottom: 20px;
   }
 }
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.leftHeader {
+  width: auto;
+  max-width: 50%;
+}
+
+.rightHeader {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  i {
+    font-size: 18px;
+  }
+}

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.*;
 public interface RequireMapper
 {
     //创建需求
-    @Insert("INSERT INTO requirements(title, content, publisher_id, createTime, updateTime, status, phase, acceptor_id) VALUES(#{title}, #{content}, #{publisher_id}, #{createTime}, #{updateTime}, #{status}, #{phase}, #{acceptor_id})")
+    @Insert("INSERT INTO requirements(title, content, publisher_id, createTime, updateTime, status, phase, acceptor_id, budget, due_date, budget_min, budget_max, date_start, date_end) VALUES(#{title}, #{content}, #{publisher_id}, #{createTime}, #{updateTime}, #{status}, #{phase}, #{acceptor_id}, #{budget}, #{dueDate}, #{budgetMin}, #{budgetMax}, #{dateStart}, #{dateEnd})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Requirement requirement);
     
